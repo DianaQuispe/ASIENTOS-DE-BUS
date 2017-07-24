@@ -174,7 +174,9 @@ function busqueda () {
 	for(var i =0; i<todos.length; i++){
 		if( parseInt (bDni) == parseInt(todos[i].dni)){
 			div2.innerHTML+= "<div>" + "Persona Buscada: " + "<br>" + "Nombre: " + todos[i].nombre + "<br>" + "Apellido: " + todos[i].apellido + "<br>" + "DNI: " + todos[i].dni + "<br>" + "<br>" + "</div>";
-		}
+		}else if (true ) {
+			 div2.innerHTML+="No se han encontrado datos similares";
+		} 
 	}
 } 
 
@@ -192,7 +194,7 @@ for (var i = 0; i < celdas.length; i++) {
 }
 function canci(event){
     var asiento=(event.target.textContent);
-	//celdas[asiento].style.backgroundColor == "White";
+	celdas[asiento].style.backgroundColor == "White";
 }
 
 function cancelar() {
