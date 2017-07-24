@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
-<body>
+<body bgcolor="	#F5F5F5">
 	<center>
 	<h1>Asientos de bus</h1>
-	<table id="tabla" border="2" width="25%" cellpadding="6" cellspacing="10">
+	<table id="tabla" border="2" bordercolor="	#CC99CC	" width="25%" cellpadding="6" cellspacing="10">
 		<tr  >
 				<td id="celda" >4</td>
 				<td>8</td>
@@ -28,8 +28,11 @@
 				<td>27</td>
 				<td>31</td>	
 			</tr>
-			<th colspan="2"></th>
-			<tr>
+	</tr>
+			<tr></tr>
+			<tr></tr>
+			<tr></tr>
+			<tr>			<tr>
 				<td>2</td>
 				<td>6</td>
 				<td>10</td>
@@ -53,8 +56,9 @@
 	<label>
 		<div> DNI
 		<input type="text" placeholder="dni" id="buscarDNI"  name="input">
-		<button type="submit" onclick="busqueda()" id="buscando">Buscar <br></button>
-   		 </div>	<br><br>
+		<button type="submit" onclick="busqueda()" id="buscando">Buscar <br></button><br>
+		<br><br><div id="div2"></div> 
+   		 </div>	<br>
 		</label>
 	
 		<label>NOMBRE <input type="text" placeholder="nombre" name="nombre" id="nombre"> 
@@ -63,12 +67,10 @@
 	    <label>DNI <input type="text" placeholder="DNI" name="dni" id="dni"></label><br><br>
 	    <label>
 	     <button type="submit" id="reservar" onclick="reservar()">Reservar</button> 
-	     <button type="submit" id="cancelar">Cancelar</button> 
+	     <button type="submit" id="cancelar" onclick="cancelar()" >Cancelar</button> 
 	     <button type="submit" id="listar" onclick="listar()" >Listar</button> </label><br><br>
     	<div id="div"></div> <br><br>
 
     </div>
 	</center>
-	<script type="text/javascript" src="asientos.js"></script>
-</body>
-</html>
+	<script type="text/javascript" src="main.js"></script>
