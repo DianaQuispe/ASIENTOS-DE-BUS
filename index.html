@@ -1,83 +1,91 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="assets/css/style.css">
 	<title>Document</title>
 </head>
-<body bgcolor="	#F5F5F5">
-	<center>
-	<h1>Asientos de bus</h1>
-	<table id="tabla" border="2" bordercolor="	#CC99CC	" width="25%" cellpadding="6" cellspacing="10">
-		<tr  >
-				<td id="celda" >4</td>
-				<td  id="1">8</td>
-				<td  id="2">12</td>
-				<td>16</td>
-				<td>20</td>
-				<td>24</td>
-				<td>28</td>
-				<td>32</td>
-			</tr>
-			<tr >
-				<td>3</td>
-				<td>7</td>
-				<td>11</td>
-				<td>15</td>
-				<td>19</td>
-				<td>23</td>
-				<td>27</td>
-				<td>31</td>	
-			</tr>
-	</tr>
-			<tr></tr>
-			<tr></tr>
-	
-				<td>2</td>
-				<td>6</td>
-				<td>10</td>
-				<td>14</td>
-				<td>18</td>
-				<td>22</td>
-				<td>26</td>
-				<td>30</td>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td>5</td>
-				<td>9</td>
-				<td>13</td>
-				<td>17</td>
-				<td>21</td>
-				<td>25</td>
-				<td>29</td>	
-			</tr>	
-	</table><br><br>
-	<label>
-		<div> DNI
-		<input type="text" placeholder="dni" id="buscarDNI"  name="input">
-		<button type="submit" onclick="busqueda()" id="buscando">Buscar <br></button><br>
-		<br><br><div id="div2"></div> 
-   		 </div>	<br>
-		</label>
-	
-		<label>NOMBRE <input type="text" placeholder="nombre" name="nombre" id="nombre"> 
-		</label><br><br>
- 		<label>APELLIDO <input type="text" placeholder="apellido" name="apellido" id="apellido"></label><br><br>
-	    <label>DNI <input type="text" placeholder="DNI" name="dni" id="dni"></label><br><br>
-	    <label>
-	     <button type="submit" id="reservar" onclick="reservar()">Reservar</button> 
-        
-	     <button type="submit" id="cancelar" onclick="cancelar()" >Cancelar</button> 
-        
-        
-	     <button type="submit" id="editar" onclick="editar()" >Editar</button> 
-        
-        
-	     <button type="submit" id="listar" onclick="listar()" >Listar</button> 
-  </label>
-  
-  <br><br>
-    	<div id="div"></div> <br><br>
+<body>
+	<section class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+					<h1>Asientos</h1>
+					<table id="tabla" border="2" align="center" >
+						<tr  >
+								<td><button>4</button></td>
+								<td><button>8</button></td>
+								<td><button>12</button></td>
+								<td><button>16</button></td>
+								
+								<td><button>20</button></td>
+								
+								<td><button>24</button></td>
+								<td><button>28</button></td>
+								<td><button>32</button></td>
+							</tr>
+							<tr >
+								<td><button>3</button></td>
+								<td><button>7</button></td>
+								<td><button>11</button></td>
+								<td><button>15</button></td>
+								<td><button>19</button></td>
+								<td><button>23</button></td>
+								<td><button>27</button></td>
+								<td><button>31</button></td>
+							</tr>
+					</tr>
+							<tr></tr>
+							<tr></tr>
+					
+							<td><button>2</button></td>
+							<td><button>6</button></td>
+							<td><button>10</button></td>
+							<td><button>14</button></td>
+							<td><button>18</button></td>
+							<td><button>22</button></td>
+							<td><button>26</button></td>
+							<td><button>30</button></td>
+						</tr>
+							<tr>
+								<td><button>1</button></td>
+								<td><button>5</button></td>
+								<td><button>9</button></td>
+								<td><button>13</button></td>
+								<td><button>17</button></td>
+								<td><button>21</button></td>
+								<td><button>25</button></td>
+								<td><button>29</button></td>
+							</tr>	
+					</table><br><br>
+			</div>
+		</div>
+	</section> <hr>
+	<div class="row">
+		<div class="col-md-12">
+			<div>
+				<p><b>DNI:</b><input id="buscarInp" type="text"> <span class="btn" id="buscarBtn">Buscar</span> </p>
+				<div>
+					<p>ASIENTO: <input id="asiento" type="text"  disabled > </p>
+					<p>NOMBRE: <input id="nombre" type="text" > </p>
+					<p>APELLIDO: <input id="apellido" type="text" > </p>
+					<p>DNI: <input id="dni" type="text" > </p>
+					<span  id="listar" >LISTAR</span>			
+					<span  class="btn" id="reservar" >RESERVAR</span><span  id="cancelar" >CANCELAR</span><hr>
+					<span  id="listar" >LISTAR</span>			
+					
+				</div>
+			</div>
+		</div>
+	</div>
 
-    </div>
-	</center>
+	
+	</body>	
 	<script type="text/javascript" src="assets/js/main.js"></script>

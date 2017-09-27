@@ -1,0 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+* {
+    outline: 2px solid red;
+}
+body {
+    background: #ECEEEF;
+    text-align: center;
+    margin: 100px auto;
+    width: 80%;
+    padding: 0 40px;
+    font: 14px normal 'Varela Round', Helvetica, serif;
+}
+
+td {
+     border-color:	#CC99CC	;
+     padding: 13px; 
+     
+}
+td button {
+    padding:23px;
+
+}
