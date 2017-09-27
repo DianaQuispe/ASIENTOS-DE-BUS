@@ -10,27 +10,21 @@ class Pasajero  {
 class Reserva {
 	constructor() {
 		this.array = [];
+		this.valNum = [];
 	}
 	init() {
-		$('button').click(()=> this.redirect(numAsiento) )
+		$('button').click( function() {
+			this.valNum = parseInt($(this).text());	
+			// console.log(valNum);
+		})
 		$('#reservar').click(()=> this.reservar() )
 	}
 	añadir(pasajero) {
-		this.array.push(pasajero)
+
 	}
-	redirect(numAsiento) {
-		console.log(numAsiento.textContent)
-		// asiento=event.target.textContent;
-		// asientoAct=event.target;
-		//  var mostrar=document.getElementById("div");
-		//  mostrar.innerHTML=parseInt(asiento) ;
-		// if((event.target).style.backgroundColor=='rgb(248, 237, 80)')//yellovv
-		//   {
-		// 	(event.target).style.backgroundColor = 'transparent';
-		//   }else
-		// 	{
-		// 	  (event.target).style.backgroundColor = 'rgb(248, 237, 80)';
-		// 	}
+	redirect() {
+			// console.log(numAsiento.textContent)
+	
 		$('#asiento').val() ;	
 		$('#nombre').focus();
 
@@ -40,7 +34,9 @@ class Reserva {
 			if($('#nombre').val()=="" || $('#apellido').val() ==""||$('#dni').val() =="") {
 				alert('FALTAN DATOS');
 			}else  {
-			}
+				let pasajero = new Pasajero($('#nombre').val(), $('#apellido').val() ,$('#dni').val(), this.valNum)		
+				this.array.push(pasajero)
+				console.log(this.array)			}
 	}
 }
 $(document).ready(function(){ 
