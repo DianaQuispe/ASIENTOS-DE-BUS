@@ -12,21 +12,31 @@ class Reserva {
 		this.array = [];
 	}
 	init() {
-		$('button').click(() =>this.asiento())
+		$('button').click(()=> this.redirect(numAsiento) )
 		$('#reservar').click(()=> this.reservar() )
 	}
 	añadir(pasajero) {
 		this.array.push(pasajero)
 	}
-	asiento() {
-		alert($(this).textContent)
-		 $('#asiento').val($(this).text());
+	redirect(numAsiento) {
+		console.log(numAsiento.textContent)
+		// asiento=event.target.textContent;
+		// asientoAct=event.target;
+		//  var mostrar=document.getElementById("div");
+		//  mostrar.innerHTML=parseInt(asiento) ;
+		// if((event.target).style.backgroundColor=='rgb(248, 237, 80)')//yellovv
+		//   {
+		// 	(event.target).style.backgroundColor = 'transparent';
+		//   }else
+		// 	{
+		// 	  (event.target).style.backgroundColor = 'rgb(248, 237, 80)';
+		// 	}
+		$('#asiento').val() ;	
 		$('#nombre').focus();
 
 	}
 	reservar() {
-		this.asiento()
- 		
+
 			if($('#nombre').val()=="" || $('#apellido').val() ==""||$('#dni').val() =="") {
 				alert('FALTAN DATOS');
 			}else  {
