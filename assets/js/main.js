@@ -1,41 +1,81 @@
 "use strict";
 class Pasajero  {
-	constructor(nombre, apellido,dni, asiento) { 
+	constructor(nombre, apellido,dni) { 
 		this.nombre = nombre;
         this.apellido = apellido;
-        this.dni = dni;
-        this.asiento = asiento;
+		this.dni = dni;
+		this.asiento = asiento;
 	}
 }
+
 class Reserva {
 	constructor() {
-		this.array = [];
+		this.pasajeros = [
+		{ 
+			nombre: 'Diana',
+			apellido: 'Quispe',
+			dni: 72162206,
+			asiento: 2,
+		}
+		]
+		this.asientoSelecc = undefined;
+		this.sera = undefined;
 	}
 	init() {
-		$('button').click(() =>this.asiento())
 		$('#reservar').click(()=> this.reservar() )
 	}
-	añadir(pasajero) {
-		this.array.push(pasajero)
-	}
 	asiento() {
-		alert($(this).textContent)
-		 $('#asiento').val($(this).text());
-		$('#nombre').focus();
+		$('button').click((e) => {
+			this.asientoSelecc = parseInt(e.target.textContent);
+			(e.target).style.backgroundColor = ((e.target).style.backgroundColor=='rgb(248, 237, 80)') ? 'transparent' : '#F8ED50';
+			// $(e.target).parent()[0].attr('class') == 'myClass'
+			// (e.target).style.className('myClass')
+			// $('button').parentNode.css('background','yellow') 
+			//  this.sera = e.target;
+			//  console.log(this.sera);
+			//  this. sera1 = $(e.target).parent()[0]
+			//  console.log(this. sera1);
+			 
+			//  this.sera1.addClass('myclase');
 
+			$('#asiento').val(this.asientoSelecc);
+		} )
+		
+		
 	}
-	reservar() {
-		this.asiento()
- 		
+	pintar() { 
+		if( this.asientoSelecc == this.pasajeros.asiento)  {
+			alert('f');
+
+		}else{
+			alert('es')
+		}
+	}
+	reservar() { 		
 			if($('#nombre').val()=="" || $('#apellido').val() ==""||$('#dni').val() =="") {
 				alert('FALTAN DATOS');
-			}else  {
+			}else if( this.asientoSelecc == undefined) { 
+				alert('SELECCIONE UN ASIENTO')
+			 }else {  
+				this.pasajeros.push({nombre: $('#nombre').val(),apellido:  $('#apellido').val(), dni :$('#dni').val(),asiento: this.asientoSelecc   })
+				// this.sera.css('background','yellow') 
+				console.log(this.pasajeros)
 			}
+			this.limpiar();
+	}
+	limpiar() {
+		$('#nombre').val('')
+		$('#apellido').val('') 
+		$('#dni').val('')
+		this.asientoSelecc == '';
 	}
 }
 $(document).ready(function(){ 
 	let reserva = new Reserva();
+	// let pasajero = new Pasajero()
 	reserva.init()
+	reserva.asiento()
+	reserva.pintar()
 } ) 
 // var reserva = new Reserva();
 // reserva.reservar()
@@ -56,7 +96,7 @@ $(document).ready(function(){
 //     mostrar.innerHTML=parseInt(asiento) ;
 //    if((event.target).style.backgroundColor=='rgb(248, 237, 80)')//yellovv
 //      {
-//        (event.target).style.backgroundColor = 'transparent';
+//        (event.target).style.backgoundColor = 'transparent';
 //      }else
 //        {
 //          (event.target).style.backgroundColor = 'rgb(248, 237, 80)';

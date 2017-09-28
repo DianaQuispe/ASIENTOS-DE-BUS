@@ -10,7 +10,9 @@ body {
     padding: 0 40px;
     font: 14px normal 'Varela Round', Helvetica, serif;
 }
-
+.myClass{
+    background-color: firebrick;
+}
 td {
      border-color:	#CC99CC	;
      padding: 13px; 
@@ -19,4 +21,7 @@ td {
 td button {
     padding:23px;
 
+}
+input {
+    text-transform: capitalize;
 }
