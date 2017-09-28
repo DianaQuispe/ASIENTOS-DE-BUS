@@ -1,6 +1,6 @@
 "use strict";
 class Pasajero  {
-	constructor(nombre, apellido,dni) { 
+	constructor(nombre, apellido,dni, asiento) { 
 		this.nombre = nombre;
         this.apellido = apellido;
 		this.dni = dni;
@@ -10,24 +10,48 @@ class Pasajero  {
 
 class Reserva {
 	constructor() {
-		this.pasajeros = [
+		this.pasajero = new Pasajero();
+		this.pasajero = 
 		{ 
 			nombre: 'Diana',
 			apellido: 'Quispe',
 			dni: 72162206,
 			asiento: 2,
 		}
-		]
-		this.asientoSelecc = undefined;
-		this.sera = undefined;
+		 this.pasajeros = [this.pasajero];
+
 	}
 	init() {
 		$('#reservar').click(()=> this.reservar() )
+		$('#listar').click(()=> this.listar() )
+		$('#buscarBtn').click(()=> this.buscar() )
+	}
+	buscar() {
+		this.inputBuscar = parseInt( $('#buscarInp').val());
+		this.resultadoBus = this.pasajeros.filter((value) => {
+			return (this.inputBuscar ==parseInt( value.dni)) ? $('#nombre').val(value.nombre) && $('#apellido').val(value.apellido) && $('#dni').val(value.dni) && $('#asiento').val(value.asiento): '';
+		})
+		console.log(this.inputBuscar)
+	}
+	listar() {
+		this.resultado = this.pasajeros.map((value) => {
+			return  $('.tablaLi').append(`<tr>
+			<td>${value.nombre} </td>\
+			<td>${value.apellido}</td>\
+			<td>${value.dni}</td>\
+			<td>${value.asiento}</td>\
+		  </tr>\
+		  <tr>`) ;
+			
+			// this.asientoSelecc == value.asiento; 
+			// $('#listarDiv').append(`<div> ${this.asientoSelecc == value.asiento} </div>`) ;
+		})
 	}
 	asiento() {
 		$('button').click((e) => {
 			this.asientoSelecc = parseInt(e.target.textContent);
 			(e.target).style.backgroundColor = ((e.target).style.backgroundColor=='rgb(248, 237, 80)') ? 'transparent' : '#F8ED50';
+	
 			// $(e.target).parent()[0].attr('class') == 'myClass'
 			// (e.target).style.className('myClass')
 			// $('button').parentNode.css('background','yellow') 
@@ -45,10 +69,10 @@ class Reserva {
 	}
 	pintar() { 
 		if( this.asientoSelecc == this.pasajeros.asiento)  {
-			alert('f');
+			// alert('f');
 
 		}else{
-			alert('es')
+			// alert('es')
 		}
 	}
 	reservar() { 		
@@ -72,10 +96,12 @@ class Reserva {
 }
 $(document).ready(function(){ 
 	let reserva = new Reserva();
-	// let pasajero = new Pasajero()
+	 let pasajero = new Pasajero()
 	reserva.init()
 	reserva.asiento()
 	reserva.pintar()
+	// reserva.listar()
+	
 } ) 
 // var reserva = new Reserva();
 // reserva.reservar()
