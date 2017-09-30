@@ -70,18 +70,33 @@
 	</section> <hr>
 	<div class="row">
 		<div class="col-md-12">
-			<div>
-				<p><b>DNI:</b><input id="buscarInp" type="text"> <span class="btn" id="buscarBtn">Buscar</span> </p>
+			<div class="form">
+				<p><b>DNI:</b><input id="buscarInp" type="number"> <span class="btn" id="buscarBtn">Buscar</span> </p>
 				<div>
 					<p>ASIENTO: <input id="asiento" type="text"  disabled > </p>
 					<p>NOMBRE: <input id="nombre" type="text" > </p>
 					<p>APELLIDO: <input id="apellido" type="text" > </p>
-					<p>DNI: <input id="dni" type="text" > </p>
-					<span  id="listar" >LISTAR</span>			
-					<span  class="btn" id="reservar" >RESERVAR</span><span  id="cancelar" >CANCELAR</span><hr>
-					<span  id="listar" >LISTAR</span>			
-					
+					<p>DNI: <input id="dni" type="number" > </p>
+					<span  class="btn" id="reservar" >RESERVAR</span>
+					<span class="btn" id="cancelar" >CANCELAR</span><hr>
+					<span class="btn" id="listar" >PASAJEROS</span>			
+
 				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="">
+			<div class="" id="listarDiv">
+				<table class="tablaLi table-bordered" align="center" >
+					<tr>
+					  <th>NOMBRE</th>
+					  <th>APELLIDO</th>
+					  <th>DNI</th>
+					  <th>ASIENTO</th>
+					</tr>
+					
+				  </table>
 			</div>
 		</div>
 	</div>
